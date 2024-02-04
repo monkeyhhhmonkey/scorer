@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <p><span class="s1">分数:0</span></p>
+    <button class="add1">加分</button>
+    <button class="reduce1">扣分</button>
+    <br>
+    <p><span class="s2">分数:0</span></p>
+    <button class="add2">加分</button>
+    <button class="reduce2">扣分</button>
+    <br>
+    <p><span class="s3">分数:0</span></p>
+    <button class="add3">加分</button>
+    <button class="reduce3">扣分</button>
+    <br>
+    <button class="clear">清空</button>
+    <script>
+        const add1 = document.querySelector('.add1');
+        const reduce1 = document.querySelector('.reduce1');
+        const add2 = document.querySelector('.add2');
+        const reduce2 = document.querySelector('.reduce2');
+        const add3 = document.querySelector('.add3');
+        const reduce3 = document.querySelector('.reduce3');
+        const score1 = document.querySelector('.s1');
+        const score2 = document.querySelector('.s2');
+        const score3 = document.querySelector('.s3');
+        const clear = document.querySelector('.clear');
+        
+        let count1 = 0;
+        add1.addEventListener('click',function(){
+            count1+=1;
+            score1.innerHTML = '分数:'+count1;
+        });
+        reduce1.addEventListener('click',function(){
+            count1-=1;
+            score1.innerHTML = '分数:'+count1;
+        });
+
+        let count2 = 0;
+        add2.addEventListener('click',function(){
+            count2+=1;
+            score2.innerHTML = '分数:'+count2;
+        });
+        reduce2.addEventListener('click',function(){
+            count2-=1;
+            score2.innerHTML = '分数:'+count2;
+        });
+
+        let count3 = 0;
+        add3.addEventListener('click',function(){
+            count3+=1;
+            score3.innerHTML = '分数:'+count3;
+        });
+        reduce3.addEventListener('click',function(){
+            count3-=1;
+            score3.innerHTML = '分数:'+count3;
+        });
+
+        clear.addEventListener('click',function(){
+            count1 = 0;
+            count2 = 0;
+            count3 = 0;
+            score1.innerHTML = '分数:'+count1;
+            score2.innerHTML = '分数:'+count2;
+            score3.innerHTML = '分数:'+count3;
+        });
+    </script>
+</body>
+</html>
