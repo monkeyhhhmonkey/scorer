@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
         }
@@ -25,6 +25,8 @@
     <button class="reduce3">扣分</button>
     <br>
     <button class="clear">清空</button>
+    <br>
+    <button class="random">投骰子</button>
     <script>
         const add1 = document.querySelector('.add1');
         const reduce1 = document.querySelector('.reduce1');
@@ -36,44 +38,61 @@
         const score2 = document.querySelector('.s2');
         const score3 = document.querySelector('.s3');
         const clear = document.querySelector('.clear');
-        
+        const random = document.querySelector('.random');
+
         let count1 = 0;
-        add1.addEventListener('click',function(){
-            count1+=1;
-            score1.innerHTML = '分数:'+count1;
+        add1.addEventListener('click', function () {
+            count1 += 1;
+            score1.innerHTML = '分数:' + count1;
         });
-        reduce1.addEventListener('click',function(){
-            count1-=1;
-            score1.innerHTML = '分数:'+count1;
+        reduce1.addEventListener('click', function () {
+            count1 -= 1;
+            score1.innerHTML = '分数:' + count1;
         });
 
         let count2 = 0;
-        add2.addEventListener('click',function(){
-            count2+=1;
-            score2.innerHTML = '分数:'+count2;
+        add2.addEventListener('click', function () {
+            count2 += 1;
+            score2.innerHTML = '分数:' + count2;
         });
-        reduce2.addEventListener('click',function(){
-            count2-=1;
-            score2.innerHTML = '分数:'+count2;
+        reduce2.addEventListener('click', function () {
+            count2 -= 1;
+            score2.innerHTML = '分数:' + count2;
         });
 
         let count3 = 0;
-        add3.addEventListener('click',function(){
-            count3+=1;
-            score3.innerHTML = '分数:'+count3;
+        add3.addEventListener('click', function () {
+            count3 += 1;
+            score3.innerHTML = '分数:' + count3;
         });
-        reduce3.addEventListener('click',function(){
-            count3-=1;
-            score3.innerHTML = '分数:'+count3;
+        reduce3.addEventListener('click', function () {
+            count3 -= 1;
+            score3.innerHTML = '分数:' + count3;
         });
 
-        clear.addEventListener('click',function(){
+        clear.addEventListener('click', function () {
             count1 = 0;
             count2 = 0;
             count3 = 0;
-            score1.innerHTML = '分数:'+count1;
-            score2.innerHTML = '分数:'+count2;
-            score3.innerHTML = '分数:'+count3;
+            score1.innerHTML = '分数:' + count1;
+            score2.innerHTML = '分数:' + count2;
+            score3.innerHTML = '分数:' + count3;
+        });
+
+        random.addEventListener('click', () => {
+            let rd_1 = Math.floor(Math.random() * 6 + 1);
+            let rd_2 = Math.floor(Math.random() * 6 + 1);
+            let rd_3 = Math.floor(Math.random() * 6 + 1);
+
+            let rd_sum = rd_1+rd_2+rd_3;
+
+            if (rd_sum > 15) {
+                alert("第一个：" + rd_1 + "\n第二个：" + rd_2 + "\n第三个：" + rd_3+"\n总和：" + rd_sum+"\n手气不错！");
+            } else if (rd_sum >= 10) {
+                alert("第一个：" + rd_1 + "\n第二个：" + rd_2 + "\n第三个：" + rd_3+"\n总和：" + rd_sum+"\n手气一般般...");
+            } else {
+                alert("第一个：" + rd_1 + "\n第二个：" + rd_2 + "\n第三个：" + rd_3+"\n总和：" + rd_sum+"\n手气不咋地。");
+            }
         });
     </script>
 </body>
